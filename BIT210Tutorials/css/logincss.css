@@ -155,4 +155,23 @@ p{
   #section-b li {
     width: 31%;
   }
+
+  .sides {
+    animation: 0.7s curtain cubic-bezier(.86,0,.07,1) 0.4s both;
+
+    display: grid;
+    grid-template-columns: 25vw 50vw;
+  }
+
+
+  @keyframes curtain {
+    0% {
+      grid-gap: 100vw;
+    }
+
+    100% {
+      grid-gap: 0;
+
+    }
+  }
 }
