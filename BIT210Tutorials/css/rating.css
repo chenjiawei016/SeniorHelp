@@ -2,7 +2,14 @@
     box-sizing: border-box;
 }
 
-
+.rating {
+    font-family: Arial;
+    margin: 0 auto; /* Center website */
+    max-width: 800px; /* Max width */
+    padding: 40px;
+    padding-top: 50px;
+    font-size: 1.1em;
+}
 
 .heading {
     font-size: 25px;
