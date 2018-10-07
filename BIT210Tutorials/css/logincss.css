@@ -198,6 +198,11 @@ p {
   text-align: center;
 }
 
+/* Service Page Style */
+#tb-display{
+  text-align: center;
+}
+
 /* Media Queries */
 @media (min-width: 700px) {
   /* Preload Styles */
