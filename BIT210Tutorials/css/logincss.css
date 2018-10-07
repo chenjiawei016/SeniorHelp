@@ -198,6 +198,11 @@ p {
   text-align: center;
 }
 
+/* Service Page Style */
+#tb-display{
+  text-align: center;
+}
+
 /* Media Queries */
 @media (min-width: 700px) {
   /* Preload Styles */
@@ -310,6 +315,11 @@ p {
     animation: 0.7s curtain cubic-bezier(.86,0,.07,1) 0.4s both;
     display: grid;
     grid-template-columns: 25vw 50vw;
+  }
+
+  .card img {
+    width: 100%;
+    height: 150px;
   }
 
   @keyframes curtain {
