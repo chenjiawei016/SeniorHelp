@@ -322,6 +322,25 @@ p {
     color: #fff;
 }
 
+/* Pop up Overlay for Service */
+/* When not active */
+.popup-overlay {
+visibility:hidden;
+}
+
+.popup-content {
+visibility:hidden;
+}
+
+/* When Active */
+.popup-overlay.active{
+visibility:visible;
+}
+
+.popup-content.active {
+visibility:visible;
+}
+
 /* Media Queries */
 @media (min-width: 700px) {
   /* Preload Styles */
