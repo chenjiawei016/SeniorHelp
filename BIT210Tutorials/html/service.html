@@ -12,7 +12,7 @@
     <link rel="stylesheet" href="../css/logincss.css">
     <title>SeniorHelp Homepage</title>
   </head>
-  <body id="home">
+  <body id="service">
     <!-- Navitgation bar using fixed top and inverse -->
     <nav class="navbar navbar-inverse navbar-fixed-top">
     <div class="container-fluid">
@@ -43,8 +43,10 @@
   </nav>
   <!-- Table Section -->
   <header>
-    <div id="tb-display">
-      <table>
+    <div class="table-head">
+      <h1> Request Services </h1>
+    </div>
+      <table id="tb-display">
         <tr>
           <th>Service Code</th>
           <th>Description</th>
@@ -75,21 +77,30 @@
           <td>djkwpajfpokodkpoawkdpoaw</td>
         </tr>
       </table>
-    </div>
   </header>
 
-  <form>
-    <label for="code">Service Code: </label>
-    <input type="text" name="code" value="">
+  <div class="form-style-2">
+    <div class="form-style-2-heading">
+      Service Request Form
+    </div>
+    <form action="" method="post">
+      <label for="code"><span>Service Code <span class="required">*</span></span>
+        <input type="text" class="input-field" id="code" name="code" value="" />
+      </label>
 
-    <label for="reqDate">Required Date: </label>
-    <input type="date" name="reqDate" value="">
+      <label for="reqDate"><span>Email <span class="required">*</span></span>
+        <input type="date" class="input-field" name="reqDate" value="" />
+      </label>
 
-    <label for="notes">Additional Notes: </label>
-    <textarea name="name" rows="5" cols="40" placeholder="Enter additional notes here..."></textarea>
+      <label for="notes"><span>Message <span class="required">*</span></span>
+        <textarea name="notes" class="textarea-field" placeholder="Enter Additional Notes..."></textarea>
+      </label>
 
-    <input type="submit" name="submitBtn" value="Submit Request">
-  </form>
+      <label><span>&nbsp;</span>
+        <input type="submit" value="Submit" />
+      </label>
+    </form>
+  </div>
 
   <!-- Footer -->
   <footer id="main-footer" class="grid">
@@ -98,5 +109,15 @@
       Project By Traversy Media
     </div>
   </footer>
+
+  <script type="text/javascript">
+    var table = document.getElementById('tb-display');
+
+    for(var i = 1; i < table.rows.length; i++){
+      table.rows[i].onclick=function(){
+        document.getElementById("code").value = this.cells[0].innerHTML;
+      };
+    }
+  </script>
 </body>
 </html>
