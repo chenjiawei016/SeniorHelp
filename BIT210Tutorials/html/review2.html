@@ -14,7 +14,7 @@
     <script src="../js/UserComments.js"></script>
     <title>Review</title>
   </head>
-  <body>
+  <body style="height:800px">
 <!-- navigation bar-->
     <div class="navSize">
     <nav class="navbar navbar-inverse navbar-fixed-top">
@@ -46,6 +46,7 @@
   </nav>
 </div>
 <!--Star rating-->
+<form>
 <div id="rating">
 <span class="heading">User Rating</span>
 <span class="fa fa-star checked"></span>
@@ -56,6 +57,7 @@
 <p><h2><strong>4.1</h2></p>
 <p> average based on 254 Ratings.</p>
 <hr style="border:3px solid #f1f1f1">
+<form>
 
 <div class="row">
   <div class="side">
@@ -117,21 +119,16 @@
 </div>
 
 <!--commentBox-->
-<div id="wrap">
   <div class="commentBoxleft">
   <div class="detailBox">
       <div class="titleBox">
         <label>Comment Box</label>
       </div>
-      <div class="commentBox">
-
-          <p class="taskDescription">Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
-      </div>
       <div class="actionBox">
           <ul class="commentList">
               <li>
                   <div class="commenterImage">
-                    <img src="http://placekitten.com/50/50" />
+                    <img src="https://openclipart.org/download/247324/abstract-user-flat-1.svg" />
                   </div>
                   <div class="commentText">
                       <p class="">Hello this is a test comment.</p> <span class="date sub-text">on March 5th, 2014</span>
@@ -140,7 +137,7 @@
               </li>
               <li>
                   <div class="commenterImage">
-                    <img src="http://placekitten.com/45/45" />
+                    <img src="https://openclipart.org/download/247324/abstract-user-flat-1.svg" />
                   </div>
                   <div class="commentText">
                       <p class="">Hello this is a test comment and this comment is particularly very long and it goes on and on and on.</p> <span class="date sub-text">on March 5th, 2014</span>
@@ -149,7 +146,7 @@
               </li>
               <li>
                   <div class="commenterImage">
-                    <img src="http://placekitten.com/40/40" />
+                    <img src="https://openclipart.org/download/247324/abstract-user-flat-1.svg" />
                   </div>
                   <div class="commentText">
                       <p class="">Hello this is a test comment.</p> <span class="date sub-text">on March 5th, 2014</span>
@@ -161,18 +158,19 @@
   </div>
 </div>
 <!--User comments input-->
+
   <div class="UserCommentsright">
     <span class="fa fa-star checked" onmouseover="starmark(this)" onclick="starmark(this)" id="1star" style="cursor:pointer"></span>
     <span class="fa fa-star checked" onmouseover="starmark(this)" onclick="starmark(this)" id="2star" style="cursor:pointer"></span>
     <span class="fa fa-star checked" onmouseover="starmark(this)" onclick="starmark(this)" id="3star" style="cursor:pointer"></span>
     <span class="fa fa-star checked" onmouseover="starmark(this)" onclick="starmark(this)" id="4star" style="cursor:pointer"></span>
     <span class="fa fa-star checked" onmouseover="starmark(this)" onclick="starmark(this)" id="5star" style="cursor:pointer"></span>
-    <br>
+    <hr style="border:3px solid #f1f1f1; width:70%;">
     <form>
     <textarea class="textarea" rows="5" placeholder="Enter your comments"></textarea>
     <button class="btn btn-lg btn-success">Submit</button>
   </form>
   </div>
-</div>
+
   </body>
 </html>

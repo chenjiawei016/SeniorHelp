@@ -8,11 +8,12 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-
-    <link rel="stylesheet" href="../css/acceptService.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="../css/review.css">
     <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
     <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
     <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+    <script src="../js/UserComments.js"></script>
     <title>Review</title>
 
   </head>
@@ -46,42 +47,38 @@
   </nav>
 
 <div class="Text">
-  <center><h3>Accept Service Requests</h3></center>
+  <center><h3>Review</h3></center>
 </div>
 <center>
-  <div id="wrap">
-  <table class="tableForSenior">
+<form style="margin-bottom:10px;">
+  Request ID:
+  <input type="text" name="requestID" value="A0001">
+  <button type="button" value="Search" onclick="myFunction()" >Search</button>
+</form>
+
+<div >
+  <table id="reviewTable" >
     <tr>
-      <th><h3>Senior</h3></th>
+      <th><strong>Name</th>
+      <th>Senior/Service Provider</th>
+      <th>View Rating</th>
+      <th>View Review</th>
+  </tr>
+    <tr>
+      <td>dsadasdsdas</td>
+      <td>Senior</td>
+      <td><button type="currentRating">CurrentRating</button></td>
+      <td><button type="review">Review</button></td>
     </tr>
     <tr>
-      <th><h4><strong>Name</h4></th>
-    </tr>
-    <tr>
-      <td><a href="review2.html">ABC</td>
-    </tr>
-  </table>
-  <table class="tableForProvider">
-    <tr>
-      <th><h3>Service Provider</h3></th>
-    </tr>
-    <tr>
-      <th><h4><strong>Name</h4></th>
-    </tr>
-    <tr>
-      <td><a href="review2.html">Allen</td>
-    </tr>
-    <tr>
-      <td><a href="review2.html">Josh</td>
+      <td>cxzcxzc</td>
+      <td>Service Provider</td>
+      <td><button type="currentRating">CurrentRating</button></td>
+      <td><button type="review">Review</button></td>
     </tr>
   </table>
 </div>
 </center>
-
-
-
-
-
 
 
   </body>
