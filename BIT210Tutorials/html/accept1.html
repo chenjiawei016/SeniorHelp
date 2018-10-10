@@ -43,7 +43,7 @@
   <center><h3>Service Requests</h3></center>
 </div>
 <center>
-  <table>
+  <table id="second-tb">
     <tr>
       <th>RequestID</th>
       <th>Service Code</th>
@@ -59,40 +59,49 @@
       <td>pending</td>
     </tr>
     <tr>
-      <td>001</td>
+      <td>002</td>
       <td>A001</td>
       <td>Cleaning</td>
       <td>2018.Oct.20th</td>
       <td>pending</td>
     </tr>
     <tr>
-      <td>001</td>
+      <td>003</td>
       <td>A001</td>
       <td>Cleaning</td>
       <td>2018.Oct.20th</td>
       <td>pending</td>
     </tr>
     <tr>
-      <td>001</td>
+      <td>004</td>
       <td>A001</td>
       <td>Cleaning</td>
       <td>2018.Oct.20th</td>
       <td>pending</td>
     </tr>
-
-
-
   </table>
 </center>
 <form class="textbox">
   <center>
-  Request ID: <input type="text" name="requestID">
-  <button type="submit"><a style="color:black; text-decoration:none" href="accept2.html">Submit</button>
-</center>
+    <label for="code">Request ID:
+    <input type="text" name="requestID" id="code">
+    </label>
+    <button type="submit"><a style="color:black; text-decoration:none" href="accept2.html">Submit</button>
+  </center>
 </form>
 <center>
   <button type="back"><a style="color:black; text-decoration:none"; href="homeProvider.html">Back</button>
 </center>
   <br>
+
+  <script type="text/javascript">
+    var table = document.getElementById('second-tb');
+
+    for(var i = 1; i < table.rows.length; i++){
+      table.rows[i].onclick=function(){
+        document.getElementById("code").value = this.cells[0].innerHTML;
+      };
+    }
+  </script>
   </body>
 </html>
