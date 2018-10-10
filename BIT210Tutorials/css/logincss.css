@@ -1,43 +1,53 @@
 /* Sign Up StyleSheet */
 #signUp {
-  /*
-  background: url("../images/signUpIMG.jpg") no-repeat;
-  background-position: cover;
-  */
+  background-image: url("../images/something-green.jpeg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
 }
 
-#signUp h1 {
-  font-size: 3em;
+.header-container h1, p{
   text-align: center;
   color: #fff;
-  font-weight: 100;
-  text-transform: capitalize;
-  letter-spacing: 4px;
-  font-family: 'Roboto', sans-serif;
+}
+
+.header-container hr {
+  width: 40%;
 }
 
 #signUp .container {
-  font-family: Arial, Helvetica, sans-serif;
-  font-size: 15px;
+  padding: 1em 0 1em;
+}
+
+#signUp label {
+  margin-top: 10px;
+  font-size: 0.9em;
   color: #fff;
 }
 
-.service-code {
-  color: black;
+.main-info {
+  width: 35%;
+  margin: 3em auto;
+  background: rgba(0, 0, 0, 0.18);
+  background-size: cover;
 }
 
-/*
-#signUp input {
-  font-size: 0.8em;
+.info-top {
+  padding: 3em;
+}
+
+input[type="text"], input[type="password"], input[type="number"],
+textarea {
+  font-size: 0.9em;
   color: #fff;
   font-weight: 100;
-  display: inline-block;
+  width: 94.5%;
+  display: block;
   border: none;
-  padding: 0.5em;
+  padding: 0.8em;
   border: solid 1px rgba(255, 255, 255, 0.37);
-  -webkit-transition: all 0.3s cubic-bezier(0.64, 0.09, 0.08, 1);
   transition: all 0.3s cubic-bezier(0.64, 0.09, 0.08, 1);
-  background: -webkit-linear-gradient(top, rgba(255, 255, 255, 0) 96%, #fff 4%);
   background: linear-gradient(to bottom, rgba(255, 255, 255, 0) 96%, #fff 4%);
   background-position: -800px 0;
   background-size: 100%;
@@ -45,56 +55,70 @@
   color: #fff;
   font-family: 'Roboto', sans-serif;
 }
-*/
 
-.container {
-  width: 50%;
-  margin: 3em auto;
-  background: rgba(0, 0, 0, 0.18);
-  background-size: cover;
+input.password, input.text.fullname {
+  margin: 2em 0;
 }
 
-#signUp .regcan-btn {
+.text:focus, .text:valid, .special-txt:focus{
+  box-shadow: none;
+  outline: none;
+  background-position: 0 0;
+}
+
+.text:focus::-webkit-input-placeholder, .text:valid::-webkit-input-placeholder,
+.special-txt:focus::-webkit-input-placeholder {
+  color: rgba(255, 255, 255, 0.7);
+  font-size: .9em;
+  transform: translateY(-30px);
+  visibility: visible !important;
+}
+
+::-webkit-input-placeholder {
+  color: #fff;
+  font-weight: 100;
+}
+
+input[type="submit"], input[type="button"] {
+  font-size: .9em;
+  color: #fff;
+  background: #76b852;
+  outline: none;
+  border: 1px solid #76b852;
+  cursor: pointer;
+  padding: 0.9em;
+  width: 49%;
+  margin: 2em 0;
+  letter-spacing: 4px;
+  display: inline-block;
+}
+
+input[type="button"] {
+  background-color: #FF2400;
+}
+
+input[type="submit"]:hover, input[type="button"]:hover {
+  transition: .5s all;
+  background: #8DC26F;
+}
+
+.info-top p {
+  font-size: 1em;
+  color: #fff;
   text-align: center;
+  letter-spacing: 1px;
+  font-weight: 300;
 }
 
-.cancelbtn {
-  width: 45%;
-  border: 2px solid #4caf50;
-  color: white;
-  padding: 5px;
-  font-size: 15px;
-  cursor: pointer;
-  margin: 12px 0;
-  display: inline-block;
-}
-
-.registerbtn {
-  width: 45%;
-  border: 2px solid #4caf50;
-  color: white;
-  padding: 5px;
-  font-size: 15px;
-  cursor: pointer;
-  margin: 12px 0;
-  display: inline-block;
-}
-
-#signUp a {
+.info-top p a {
+  color: #fff;
+  transition: .5s all;
+  font-weight: 400;
   text-decoration: underline;
 }
 
-#signUp input {
-
-}
-
-#signUp label {
-
-}
-
-input[type="checkbox"]{
-  display: inline-block;
-  margin-top: 10px;
+.info-top p a:hover {
+  color: yellow;
 }
 
 .service-code {
@@ -278,6 +302,10 @@ nav {
   padding: 1.5em;
 }
 
+.card-content p {
+  color: black;
+}
+
 /* Section C */
 #section-c {
   background: #fff;
@@ -303,8 +331,6 @@ nav {
   text-align: center;
 }
 
-<<<<<<< HEAD
-=======
 /* Service Page Style */
 #tb-display{
   text-align: center;
@@ -312,6 +338,7 @@ nav {
 
 /* Services Page Style */
 #service {
+  color: black;
   padding: 50px 0 0 0;
   margin: 0 10px;
 }
@@ -351,7 +378,7 @@ nav {
 
 /* Service Page Form Input */
 .form-style-2{
-    max-width: 500px;
+    max-width: 450px;
     padding: 20px 12px 10px 20px;
     font: 13px Arial, Helvetica, sans-serif;
     border-radius: 5px;
@@ -367,12 +394,16 @@ nav {
     font-size: 15px;
     padding-bottom: 3px;
 }
+
+.form-style-2 .input-field {
+  width: 100px;
+}
 .form-style-2 label{
-    display: block;
+    display: flex;
     margin: 0px 0px 15px 0px;
 }
 .form-style-2 label > span{
-    width: 100px;
+    width: 120px;
     font-weight: bold;
     float: left;
     padding-top: 8px;
@@ -383,21 +414,18 @@ nav {
 }
 
 .form-style-2 input.input-field,
+.form-style-2 input.input-field-2,
 .form-style-2 .textarea-field {
+    color: black;
     box-sizing: border-box;
-    -webkit-box-sizing: border-box;
-    -moz-box-sizing: border-box;
     border: 1px solid #C2C2C2;
     box-shadow: 1px 1px 4px #EBEBEB;
-    -moz-box-shadow: 1px 1px 4px #EBEBEB;
-    -webkit-box-shadow: 1px 1px 4px #EBEBEB;
     border-radius: 3px;
-    -webkit-border-radius: 3px;
-    -moz-border-radius: 3px;
-    padding: 7px;
+    padding: 8px;
     outline: none;
 }
 .form-style-2 .input-field:focus,
+.form-style-2 input.input-field-2:focus,
 .form-style-2 .textarea-field:focus{
     border: 1px solid #0C0;
 }
@@ -443,7 +471,6 @@ visibility:visible;
 visibility:visible;
 }
 
->>>>>>> 871f54ac6eb514d021d53ca5cfe048258d857981
 /* Media Queries */
 @media (min-width: 700px) {
   /* Preload Styles */
@@ -529,10 +556,12 @@ visibility:visible;
   #section-a .content-text {
     columns: 2;
     column-gap: 2em;
+
   }
 
   #section-a .content-text p {
     padding-top: 0;
+    color: black;
   }
 
   .content-wrap, #section-b ul {
@@ -640,5 +669,108 @@ visibility:visible;
     font-size: 18px;
     cursor: pointer;
     margin: 12px 0;
+  }
+}
+
+@media(max-width:1440px) {
+  input[type="text"], textarea , input[type="password"],
+  input[type="number"] {
+    width: 94%;
+  }
+}
+@media(max-width:1366px) {
+  #singUp h1 {
+    font-size: 2.6em;
+  }
+
+  .info-top {
+    padding: 2.5em;
+  }
+
+  .main-info {
+    margin: 2em auto;
+    width: 36%;
+  }
+}
+
+@media(max-width:1280px) {
+  .main-info {
+    width: 40%;
+  }
+}
+
+@media(max-width:1080px) {
+  .main-info {
+    width: 46%;
+  }
+}
+
+@media(max-width:1024px) {
+  .main-info {
+    width: 49%;
+  }
+}
+
+@media(max-width:991px) {
+  #singUp h1 {
+    font-size: 2.4em;
+  }
+
+  #signUp .container {
+    padding: 2em 0 1em;
+  }
+}
+
+@media(max-width:900px) {
+  .main-info {
+    width: 58%;
+  }
+
+  input[type="text"], textarea , input[type="password"],
+  input[type="number"] {
+    width: 93%;
+  }
+}
+
+@media(max-width:800px) {
+  #singUp h1 {
+    font-size: 2.2em;
+  }
+}
+
+@media(max-width:736px) {
+  .main-info {
+    width: 62%;
+  }
+}
+
+@media(max-width:667px) {
+  .main-info {
+    width: 67%;
+  }
+}
+
+@media(max-width:600px) {
+  .info-top {
+    padding: 2.2em;
+  }
+
+  input.password, input.text.fullname {
+    margin: 1.5em 0;
+  }
+
+  input[type="submit"] {
+    margin: 2em 0;
+  }
+
+  #signUp h1 {
+    font-size: 2em;
+    letter-spacing: 3px;
+  }
+}
+
+@media(max-width:568px) {
+  .main-innfo {
+    width: 75%;
   }
 }
