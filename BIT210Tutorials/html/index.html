@@ -64,8 +64,9 @@
       color:white;
     }
 
-    .btn-login {
-      width: 100%;
+    .btn-login{
+      display: inline-block;
+      width: 49%;
       background: none;
       border: 2px solid #4caf50;
       color: white;
@@ -74,6 +75,22 @@
       cursor: pointer;
       margin: 12px 0;
     }
+
+    .btn-signup {
+      width: 49%;
+      background: none;
+      border: 2px solid #4caf50;
+      color: white;
+      padding: 5px;
+      font-size: 18px;
+      cursor: pointer;
+      margin: 12px 0;
+    }
+
+    input[type="button"]:hover {
+      background: black;
+    }
+
     </style>
     <title>Login Form</title>
   </head>
@@ -90,6 +107,7 @@
         <input type="password" placeholder="Password" name="" value="">
       </div>
 
+      <input onclick="location.href='signUp.html'" class="btn-signup" type="button" name="button" value="Sign Up">
       <input onclick="location.href='loader.html'" class="btn-login" type="button" name="button" value="Login">
     </div>
   </body>

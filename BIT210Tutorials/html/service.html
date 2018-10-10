@@ -69,8 +69,8 @@
         <ul class="nav navbar-nav navbar-left">
           <li><a href="home.html"><span class="glyphicon glyphicon-home"></span> Home</a></li>
           <li><a href="service.html"><span class="glyphicon glyphicon-list-alt"></span> Services</a></li>
-          <li><a href="#"><span class="glyphicon glyphicon-folder-open"></span> Manage</a></li>
-          <li><a href="review.html"><span class="glyphicon glyphicon-comment"></span> Review</a></li>
+          <li><a href="manage.html"><span class="glyphicon glyphicon-folder-open"></span> Manage</a></li>
+          <li><a href="review1.html"><span class="glyphicon glyphicon-comment"></span> Review</a></li>
         </ul>
         <!-- Login and Sign Up Components -->
         <ul class="nav navbar-nav navbar-right">
@@ -142,27 +142,10 @@
       </label>
 
       <label><span>&nbsp;</span>
-        <input type="submit" class="open" value="Submit" />
+        <input type="button" class="openSub" value="Submit" />
       </label>
     </form>
   </div>
-
-  <!--Creates the popup body-->
-  <div class="popup-overlay">
-  <!--Creates the popup content-->
-   <div class="popup-content">
-      <h2>Request Receipt</h2>
-      <h3>Request ID: </h3>
-      <h3>Status: </h3>
-      <h3>Service Code: </h3>
-      <h3>Date: </h3>
-      <h3>Notes: </h3>
-      <!--popup's close button-->
-      <input type="close" name="Close" value="">
-    </div>
-  </div>
-  </div>
-
 
   <!-- Footer -->
   <footer id="main-footer" class="grid">
@@ -171,6 +154,52 @@
       Project By Traversy Media
     </div>
   </footer>
+
+  <div class="modal fade" id="modelWindowSub" role="dialog">
+    <div class="modal-dialog modal-sm, vertical-align-center">
+      <div class="modal-content animate">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+          <h4 class="modal-title">Service Request Receipt</h4>
+        </div>
+        <div class="modal-body">
+          <div class="inline">
+            <label for="displayDate">RequestID
+              <input type="text" name="input-field" value="R001" readonly>
+            </label>
+          <div>
+
+          <div class="inline">
+            <label for="updateStatus">Status:
+              <input type="text" name="input-field" value="pending" readonly>
+            </label>
+          <div>
+
+          <div class="inline">
+            <label for="updateStatus">Service Code:
+              <input type="text" name="input-field" value="A4531" readonly>
+            </label>
+          <div>
+
+          <div class="inline">
+            <label for="displayDate">Required Date:
+              <input type="text" name="input-field" value="10/10/2018" readonly>
+            </label>
+          </div>
+
+          <div class="inline">
+            <label for="updateNotes">Notes:
+              <textarea class="textarea-field" name="updateNotes" rows="4" cols="50" readonly> Bring extra money </textarea>
+            </label>
+          </div>
+
+        </div>
+        <div class="modal-footer">
+          <button type="button" id="danger-btn" data-dismiss="modal" class="btn btn-primary">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
 
   <!-- Js for sending input form table to text fields -->
   <script type="text/javascript">
@@ -185,6 +214,47 @@
     // validation for date to be able to pick after today's date
     var today = new Date().toISOString().split('T')[0];
     document.getElementsByName("reqDate")[0].setAttribute('min', today);
+
+    // opens the modal when update button is clicked
+    $(document).on('click', '.openSub', function () {
+      $('#modelWindowSub').modal('show');
+    });
+
+    $(document).on('click', '.openSub', function () {
+      $('#modelWindowSub').modal('show');
+    });
+
+    function setModalMaxHeight(element) {
+      this.$element     = $(element);
+      this.$content     = this.$element.find('.modal-content');
+      var borderWidth   = this.$content.outerHeight() - this.$content.innerHeight();
+      var dialogMargin  = $(window).width() < 768 ? 20 : 60;
+      var contentHeight = $(window).height() - (dialogMargin + borderWidth);
+      var headerHeight  = this.$element.find('.modal-header').outerHeight() || 0;
+      var footerHeight  = this.$element.find('.modal-footer').outerHeight() || 0;
+      var maxHeight     = contentHeight - (headerHeight + footerHeight);
+
+      this.$content.css({
+        'overflow': 'hidden'
+      });
+
+      this.$element
+      .find('.modal-body').css({
+        'max-height': maxHeight,
+        'overflow-y': 'auto'
+      });
+    }
+
+    $('.modal').on('show.bs.modal', function() {
+      $(this).show();
+      setModalMaxHeight(this);
+    });
+
+    $(window).resize(function() {
+      if ($('.modal.in').length != 0) {
+        setModalMaxHeight($('.modal.in'));
+      }
+    });
   </script>
 </body>
 </html>
