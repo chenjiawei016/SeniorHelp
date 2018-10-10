@@ -331,11 +331,6 @@ nav {
   text-align: center;
 }
 
-/* Service Page Style */
-#tb-display{
-  text-align: center;
-}
-
 /* Services Page Style */
 #service {
   color: black;
@@ -352,7 +347,8 @@ nav {
 #tb-display {
   border-collapse: collapse;
   width: 100%;
-  margin-bottom: 10px
+  margin-bottom: 10px;
+  text-align: center;
 }
 
 #tb-display td, #tb-display th {
@@ -396,7 +392,7 @@ nav {
 }
 
 .form-style-2 .input-field {
-  width: 100px;
+  width: 140px;
 }
 .form-style-2 label{
     display: flex;
@@ -452,6 +448,12 @@ nav {
     color: #fff;
 }
 
+.form-style-2 input::placeholder,
+.form-style-2 textarea::placeholder{
+  color: black;
+  opacity: 0.6;
+}
+
 /* Pop up Overlay for Service */
 /* When not active */
 .popup-overlay {
@@ -470,6 +472,141 @@ visibility:visible;
 .popup-content.active {
 visibility:visible;
 }
+
+/* Manage Page Stylesheet */
+#manage {
+  color: black;
+  padding: 50px 0 0 0;
+  margin: 0 15px;
+}
+
+#managetb-display {
+  border-collapse: collapse;
+  width: 100%;
+  margin-bottom: 10px;
+  text-align: center;
+}
+
+#managetb-display td, #managetb-display th {
+  border: 1px solid #ddd;
+  padding: 8px;
+  text-align: left;
+}
+
+#managetb-display tr:nth-child(even) {
+  background-color: #f2f2f2;
+}
+
+#managetb-display tr:not(:first-child):hover {
+  background-color: #ddd;
+}
+
+#managetb-display th {
+    padding-top: 12px;
+    padding-bottom: 12px;
+    background-color: #4CAF50;
+    color: white;
+}
+
+.form-style-3{
+    max-width: 450px;
+    padding: 20px 12px 10px 20px;
+    font: 13px Arial, Helvetica, sans-serif;
+    border-radius: 5px;
+    background-color: #f2f2f2;
+    background-position: center;
+    margin: 0 auto 10px auto;
+}
+
+.form-style-3 .input-field {
+  width: 150px;
+  color: black;
+}
+.form-style-3 label{
+    display: flex;
+    margin: 0px 0px 4px 0px;
+}
+.form-style-3 label > span{
+    width: 120px;
+    font-weight: bold;
+    float: left;
+    padding-top: 8px;
+    padding-right: 5px;
+}
+
+.form-style-3 input::placeholder {
+  color: black;
+  opacity: 0.6;
+}
+
+.form-style-3 input.input-field{
+    color: black;
+    box-sizing: border-box;
+    border: 1px solid #C2C2C2;
+    box-shadow: 1px 1px 4px #EBEBEB;
+    border-radius: 3px;
+    padding: 8px;
+    outline: none;
+}
+.form-style-3 .input-field:focus{
+    border: 1px solid #0C0;
+}
+
+.form-style-3 input[type=button]{
+  margin-left: 100px;
+    border: none;
+    padding: 8px 15px 8px 15px;
+    background: #FF8500;
+    color: #fff;
+    box-shadow: 1px 1px 4px #DADADA;
+    border-radius: 3px;
+}
+
+.form-style-3 input[type=button]:hover{
+    background: #EA7B00;
+    color: #fff;
+}
+
+/* Manage Page Modal Stylesheet */
+.modal-body label{
+  display: block;
+}
+
+.modal-body .textarea-field{
+  border: 2px solid #DADADA;
+}
+
+.modal-body .textarea-field:focus{
+  border: 2px solid #0C0;
+}
+
+.modal-footer button[type=button] {
+  display: inline-block;
+}
+
+.modal-footer #special-btn {
+  margin-top: 0;
+}
+
+.modal {
+  text-align: center;
+  padding: 0!important;
+}
+
+.modal:before {
+  content: '';
+  display: inline-block;
+  height: 100%;
+  vertical-align: middle;
+  margin-right: -4px; /* Adjusts for spacing */
+}
+
+.modal-dialog {
+  display: inline-block;
+  text-align: left;
+  vertical-align: middle;
+}
+
 
 /* Media Queries */
 @media (min-width: 700px) {

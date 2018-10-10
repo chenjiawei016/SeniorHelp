@@ -41,5 +41,153 @@
       </div>
     </div>
   </nav>
+
+  <header>
+    <div class="table-head">
+      <h1>Manage Request/Service</h1>
+    </div>
+
+    <table id="managetb-display">
+      <tr>
+        <th>Service Code</th>
+        <th>Service Description</th>
+        <th>Request ID</th>
+        <th>Required Date</th>
+        <th>Status</th>
+        <th>Action</th>
+      </tr>
+
+      <tr>
+        <td>A4531</td>
+        <td>jdisoajdoaisjdoais</td>
+        <td>R001</td>
+        <td>10 Oct 2018</td>
+        <td>pending</td>
+        <td><button class="updateBtn">Update</button></td>
+      </tr>
+
+      <tr>
+        <td>A4531</td>
+        <td>jdisoajdoaisjdoais</td>
+        <td>R002</td>
+        <td>10 Oct 2018</td>
+        <td>pending</td>
+        <td><button class="updateBtn">Update</button></td>
+      </tr>
+
+      <tr>
+        <td>A4531</td>
+        <td>jdisoajdoaisjdoais</td>
+        <td>R003</td>
+        <td>10 Oct 2018</td>
+        <td>pending</td>
+        <td><button class="updateBtn">Update</button></td>
+      </tr>
+
+      <tr>
+        <td>A4531</td>
+        <td>jdisoajdoaisjdoais</td>
+        <td>R004</td>
+        <td>10 Oct 2018</td>
+        <td>pending</td>
+        <td><button class="updateBtn">Update</button></td>
+      </tr>
+
+      <tr>
+        <td>A4531</td>
+        <td>jdisoajdoaisjdoais</td>
+        <td>R005</td>
+        <td>10 Oct 2018</td>
+        <td>pending</td>
+        <td><button class="updateBtn">Update</button></td>
+      </tr>
+    </table>
+  </header>
+
+  <main>
+    <div class="form-style-3">
+      <div class="form-style-2-heading">
+        Service Request Form
+      </div>
+      <form action="" method="post">
+        <label for="code"><span>Request ID: </span>
+          <input type="text" class="input-field" id="rid" name="code" placeholder="Enter Request ID" value="" />
+        </label>
+          <input type="button" class="openSub" value="Submit" />
+      </form>
+    </div>
+  </main>
+
+  <div class="modal fade" id="modelWindow" role="dialog">
+    <div class="modal-dialog modal-md vertical-align-center">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+          <h4 class="modal-title">Update Service Request</h4>
+        </div>
+        <div class="modal-body">
+          <label for="updateNotes">Notes:
+            <textarea class="textarea-field" name="updateNotes" rows="4" cols="50"></textarea>
+          </label>
+
+          <label for="updateStatus">Status: </label>
+          <select class="statusChoice" name="statusChoice">
+            <option value="cancelled">Cancelled</option>
+            <option value="completed">Completed</option>
+          </select>
+        </div>
+        <div class="modal-footer">
+          <button type="button" data-dismiss="modal" class="btn btn-secondary">Close</button>
+          <button type="button" id="special-btn" class="btn btn-primary">Review User</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script type="text/javascript">
+  var table = document.getElementById('managetb-display');
+  for(var i = 1; i < table.rows.length; i++){
+    table.rows[i].onclick=function(){
+      document.getElementById("rid").value = this.cells[0].innerHTML;
+    };
+  }
+
+  // opens the modal when update button is clicked
+  $(document).on('click', '.updateBtn', function () {
+    $('#modelWindow').modal('show');
+  });
+
+  function setModalMaxHeight(element) {
+    this.$element     = $(element);
+    this.$content     = this.$element.find('.modal-content');
+    var borderWidth   = this.$content.outerHeight() - this.$content.innerHeight();
+    var dialogMargin  = $(window).width() < 768 ? 20 : 60;
+    var contentHeight = $(window).height() - (dialogMargin + borderWidth);
+    var headerHeight  = this.$element.find('.modal-header').outerHeight() || 0;
+    var footerHeight  = this.$element.find('.modal-footer').outerHeight() || 0;
+    var maxHeight     = contentHeight - (headerHeight + footerHeight);
+
+    this.$content.css({
+      'overflow': 'hidden'
+    });
+
+    this.$element
+    .find('.modal-body').css({
+      'max-height': maxHeight,
+      'overflow-y': 'auto'
+    });
+  }
+
+  $('.modal').on('show.bs.modal', function() {
+    $(this).show();
+    setModalMaxHeight(this);
+  });
+
+  $(window).resize(function() {
+    if ($('.modal.in').length != 0) {
+      setModalMaxHeight($('.modal.in'));
+    }
+  });
+  </script>
 </body>
 </html>
