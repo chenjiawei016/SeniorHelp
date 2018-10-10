@@ -8,7 +8,7 @@ body{
 }
 table {
     font-family: arial, sans-serif;
-    border-collapse: collapse;
+    border-collapse:collapse;
     width: 50%;
 
 
@@ -48,4 +48,21 @@ button{
 
 .textbox{
   margin-top: 30px;
+}
+
+#wrap{
+  width:60%;
+
+}
+.tableForSenior{
+  float: left;
+  width:49%;
+  height: auto;
+
+}
+
+.tableForProvider{
+  float: right;
+  width: 49%;
+  height: auto;
 }
