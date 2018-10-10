@@ -508,6 +508,10 @@ visibility:visible;
     color: white;
 }
 
+#managetb-display td:last-child{
+  text-align: center;
+}
+
 .form-style-3{
     max-width: 450px;
     padding: 20px 12px 10px 20px;
@@ -564,10 +568,13 @@ visibility:visible;
 
 .form-style-3 input[type=button]:hover{
     background: #EA7B00;
-    color: #fff;
+    color: black;
 }
 
 /* Manage Page Modal Stylesheet */
+.modal-body input, textarea{
+  color: black;
+}
 .modal-body label{
   display: block;
 }
@@ -586,6 +593,25 @@ visibility:visible;
 
 .modal-footer #special-btn {
   margin-top: 0;
+  background-color: #4bd8f4;
+}
+
+#special-btn a {
+  text-decoration: none;
+  color: white;
+}
+
+#special-btn a:hover {
+  color: black;
+}
+
+.modal-footer #danger-btn {
+  background-color: red;
+}
+
+.modal-footer #update-btn {
+  margin-top: 0;
+  background-color: green;
 }
 
 .modal {
@@ -606,7 +632,6 @@ visibility:visible;
   text-align: left;
   vertical-align: middle;
 }
-
 
 /* Media Queries */
 @media (min-width: 700px) {

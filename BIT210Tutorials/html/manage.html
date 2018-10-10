@@ -54,7 +54,6 @@
         <th>Request ID</th>
         <th>Required Date</th>
         <th>Status</th>
-        <th>Action</th>
       </tr>
 
       <tr>
@@ -63,7 +62,6 @@
         <td>R001</td>
         <td>10 Oct 2018</td>
         <td>pending</td>
-        <td><button class="updateBtn">Update</button></td>
       </tr>
 
       <tr>
@@ -72,7 +70,6 @@
         <td>R002</td>
         <td>10 Oct 2018</td>
         <td>pending</td>
-        <td><button class="updateBtn">Update</button></td>
       </tr>
 
       <tr>
@@ -81,7 +78,6 @@
         <td>R003</td>
         <td>10 Oct 2018</td>
         <td>pending</td>
-        <td><button class="updateBtn">Update</button></td>
       </tr>
 
       <tr>
@@ -90,7 +86,6 @@
         <td>R004</td>
         <td>10 Oct 2018</td>
         <td>pending</td>
-        <td><button class="updateBtn">Update</button></td>
       </tr>
 
       <tr>
@@ -99,7 +94,6 @@
         <td>R005</td>
         <td>10 Oct 2018</td>
         <td>pending</td>
-        <td><button class="updateBtn">Update</button></td>
       </tr>
     </table>
   </header>
@@ -126,19 +120,25 @@
           <h4 class="modal-title">Update Service Request</h4>
         </div>
         <div class="modal-body">
+          <label for="displayDate">Required Date:
+            <input type="text" name="input-field" value="10/10/2018" readonly>
+          </label>
+
           <label for="updateNotes">Notes:
-            <textarea class="textarea-field" name="updateNotes" rows="4" cols="50"></textarea>
+            <textarea class="textarea-field" name="updateNotes" rows="4" cols="50"> Bring extra money </textarea>
           </label>
 
           <label for="updateStatus">Status: </label>
           <select class="statusChoice" name="statusChoice">
+            <option value="pending">Pending</option>
             <option value="cancelled">Cancelled</option>
             <option value="completed">Completed</option>
           </select>
         </div>
         <div class="modal-footer">
-          <button type="button" data-dismiss="modal" class="btn btn-secondary">Close</button>
-          <button type="button" id="special-btn" class="btn btn-primary">Review User</button>
+          <button type="button" id="danger-btn" data-dismiss="modal" class="btn btn-secondary">Close</button>
+          <button type="button" id="update-btn" class="btn btn-secondary">Update Details</button>
+          <button type="button" id="special-btn" class="btn btn-primary"><a href="review.html">Review User</a></button>
         </div>
       </div>
     </div>
@@ -153,7 +153,7 @@
   }
 
   // opens the modal when update button is clicked
-  $(document).on('click', '.updateBtn', function () {
+  $(document).on('click', '.openSub', function () {
     $('#modelWindow').modal('show');
   });
 
