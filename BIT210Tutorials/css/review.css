@@ -37,8 +37,49 @@
 }
 
 @media (max-width:700px) {
-  #reviewTable{
-    margin:0 auto;
-
+  
+  #wrap{
+    margin: 0;
   }
+}
+
+.modal-body input, textarea{
+  color: black;
+}
+.modal-body label{
+  display: block;
+}
+
+.modal-body .textarea-field{
+  border: 2px solid #DADADA;
+}
+
+.modal-body .textarea-field:focus{
+  border: 2px solid #0C0;
+}
+
+.modal-footer #submit-btn {
+  margin-top: 0;
+  background-color: green;
+  text-decoration: none;
+  color: white;
+}
+
+.modal {
+  text-align: center;
+  padding: 0!important;
+}
+
+.modal:before {
+  content: '';
+  display: inline-block;
+  height: 100%;
+  vertical-align: middle;
+  margin-right: -4px; /* Adjusts for spacing */
+}
+
+.modal-dialog {
+  display: inline-block;
+  text-align: left;
+  vertical-align: middle;
 }
