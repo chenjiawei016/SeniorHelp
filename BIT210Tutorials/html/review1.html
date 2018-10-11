@@ -55,8 +55,8 @@
   <input type="text" name="requestID" value="A0001">
   <button type="button" value="Search" onclick="myFunction()" >Search</button>
 </form>
-
-<div >
+</center>
+<div id="wrap">
   <table id="reviewTable" >
     <tr>
       <th><strong>Name</th>
@@ -67,19 +67,93 @@
     <tr>
       <td>dsadasdsdas</td>
       <td>Senior</td>
-      <td><button type="currentRating">CurrentRating</button></td>
-      <td><button type="review">Review</button></td>
+      <td><button type="currentRating" class="currentRating">CurrentRating</button></td>
+      <td><button type="review" class="review">Review</button></td>
     </tr>
     <tr>
       <td>cxzcxzc</td>
       <td>Service Provider</td>
-      <td><button type="currentRating">CurrentRating</button></td>
-      <td><button type="review">Review</button></td>
+      <td><button type="currentRating" id="currentRating">CurrentRating</button></td>
+      <td><input type="button" class="review" value="Review" onclick="showtable()"></td>
     </tr>
   </table>
 </div>
-</center>
 
 
+<div class="modal fade" id="modelWindow" role="dialog">
+  <div class="modal-dialog modal-md vertical-align-center">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+        <h4 class="modal-title">Update Service Request</h4>
+      </div>
+      <div class="modal-body">
+        <label for="displayDate">Required Date:
+          <input type="text" name="input-field" value="10/10/2018" readonly>
+        </label>
+
+        <label for="updateNotes">Notes:
+          <textarea class="textarea-field" name="updateNotes" rows="4" cols="50"> Bring extra money </textarea>
+        </label>
+
+        <label for="updateStatus">Status: </label>
+        <select class="statusChoice" name="statusChoice">
+          <option value="pending">Pending</option>
+          <option value="cancelled">Cancelled</option>
+          <option value="completed">Completed</option>
+        </select>
+      </div>
+      <div class="modal-footer">
+        <button type="button" id="danger-btn" data-dismiss="modal" class="btn btn-secondary">Close</button>
+        <button type="button" id="update-btn" class="btn btn-secondary">Update Details</button>
+        <button type="button" id="special-btn" class="btn btn-primary"><a href="review.html">Review User</a></button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+// opens the modal when update button is clicked
+$(document).on('click', '.reivew', function () {
+  $('#modelWindow').modal('show');
+});
+
+function setModalMaxHeight(element) {
+  this.$element     = $(element);
+  this.$content     = this.$element.find('.modal-content');
+  var borderWidth   = this.$content.outerHeight() - this.$content.innerHeight();
+  var dialogMargin  = $(window).width() < 768 ? 20 : 60;
+  var contentHeight = $(window).height() - (dialogMargin + borderWidth);
+  var headerHeight  = this.$element.find('.modal-header').outerHeight() || 0;
+  var footerHeight  = this.$element.find('.modal-footer').outerHeight() || 0;
+  var maxHeight     = contentHeight - (headerHeight + footerHeight);
+
+  this.$content.css({
+    'overflow': 'hidden'
+  });
+
+  this.$element
+  .find('.modal-body').css({
+    'max-height': maxHeight,
+    'overflow-y': 'auto'
+  });
+}
+
+$('.modal').on('show.bs.modal', function() {
+  $(this).show();
+  setModalMaxHeight(this);
+});
+
+$(window).resize(function() {
+  if ($('.modal.in').length != 0) {
+    setModalMaxHeight($('.modal.in'));
+  }
+});
+
+function showtable(){
+  var y = document.getElementById('modelWindow');
+  y.style.display = "block";
+}
+</script>
   </body>
 </html>
