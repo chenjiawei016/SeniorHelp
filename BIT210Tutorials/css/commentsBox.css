@@ -61,31 +61,19 @@
     border-top:1px dotted #bbb;
     padding:10px;
 }
-.UserCommentsright{
-  margin-top: 10px;
+.UserComments{
   background-color: #f2f2f2;
   margin:0 auto;
-  width:350px;
-  height: auto;
+  width: 320px;
+  height:auto;
 }
 
-
-.commentBoxleft{
-  margin:0 auto;
-  width:49%;
-  height: auto;
-}
 .textarea{
-  width: 300px;
+  width: 320px;
 
 }
 
-button{
-  width: 100px;
-  height: 40px;
-  margin-top: 15px;
-  margin:0 auto;
-}
+
 
 @media (max-width:1100px) {
   .detailBox{
@@ -93,16 +81,7 @@ button{
   }
 
 
-  .commentBoxleft{
 
-    width:70%;
-    float:left;
-  }
 
-  .UserCommentsright{
 
-    margin-top:10px;
-    width:350px;
-    float: left;
-  }
 }

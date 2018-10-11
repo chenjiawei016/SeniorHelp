@@ -3,13 +3,11 @@
 }
 body{
   font-size: 14px;
-  margin-top: 40px;
 }
 #rating {
     font-family: Arial;
     margin: 0 auto; /* Center website */
-    width: 500px; /* Max width */
-    padding: 20px;
+    width: 500px;
     font-size: 15px;
 }
 
@@ -18,9 +16,7 @@ body{
     margin-right: 25px;
 }
 
-.fa {
-    font-size: 25px;
-}
+
 
 .checked {
     color: orange;
@@ -78,7 +74,6 @@ body{
       width: 60%;
     }
     hr{
-      width: 70%;
-      float: left;
+      width: 100%;
     }
 }
