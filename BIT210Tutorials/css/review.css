@@ -2,7 +2,6 @@
   width:80%;
   margin-left: 30%;
   margin-right: 30%;
-
 }
 
 .Text{
@@ -37,7 +36,7 @@
 }
 
 @media (max-width:700px) {
-  
+
   #wrap{
     margin: 0;
   }
