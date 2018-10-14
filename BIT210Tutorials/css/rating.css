@@ -6,16 +6,9 @@ body{
 }
 #rating {
     font-family: Arial;
-    margin: 0 auto; /* Center website */
-    width: 500px;
+    width: 300px;
     font-size: 15px;
 }
-
-.heading {
-    font-size: 25px;
-    margin-right: 25px;
-}
-
 
 
 .checked {
@@ -73,7 +66,5 @@ body{
     .middle{
       width: 60%;
     }
-    hr{
-      width: 100%;
-    }
+
 }

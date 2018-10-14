@@ -13,7 +13,7 @@
     <link rel="stylesheet" href="../css/review.css">
     <link rel="stylesheet" href="../css/rating.css">
     <link rel="stylesheet" href="../css/commentsBox.css">
-    <script src="../js/UserComments.js"></script>
+    <script src="../js/review.js"></script>
     <title>SeniorHelp Homepage</title>
   </head>
   <body>
@@ -57,6 +57,7 @@
       <button type="button" value="Search" onclick="myFunction()" >Search</button>
     </form>
     </center>
+
 <div id="wrap">
     <table id="reviewTable">
       <tr>
@@ -143,15 +144,15 @@
               </div>
           </div>
           <div class="UserComments">
-            <form style="margin-bottom:0px;">
+            <form style="margin-top:15px">
             <span class="fa fa-star checked" onmouseover="starmark(this)" onclick="starmark(this)" id="1star" style="cursor:pointer"></span>
             <span class="fa fa-star checked" onmouseover="starmark(this)" onclick="starmark(this)" id="2star" style="cursor:pointer"></span>
             <span class="fa fa-star checked" onmouseover="starmark(this)" onclick="starmark(this)" id="3star" style="cursor:pointer"></span>
             <span class="fa fa-star checked" onmouseover="starmark(this)" onclick="starmark(this)" id="4star" style="cursor:pointer"></span>
             <span class="fa fa-star checked" onmouseover="starmark(this)" onclick="starmark(this)" id="5star" style="cursor:pointer"></span>
-            <hr style="border:3px solid #f1f1f1; width:70%;">
-            <textarea class="textarea" rows="5" placeholder="Enter your comments"></textarea>
+
           </form>
+            <textarea rows="5" placeholder="Enter your comments"></textarea>
           </div>
         </div>
         <div class="modal-footer">
@@ -171,6 +172,7 @@
             <h4 class="modal-title">User Rating</h4>
           </div>
           <div class="modal-body">
+            <center>
             <div id="rating">
             <span class="fa fa-star checked"></span>
             <span class="fa fa-star checked"></span>
@@ -239,59 +241,13 @@
               </div>
             </div>
           </div>
+        </center>
         </div>
       </div>
     </div>
+  </div>
 
 
-  <script type="text/javascript">
-  var table = document.getElementById('reviewTable');
-  for(var i = 1; i < table.rows.length; i++){
-    table.rows[i].onclick=function(){
-      document.getElementById("rid").value = this.cells[0].innerHTML;
-    };
-  }
 
-  // opens the modal when update button is clicked
-  $(document).on('click', '.openSub', function () {
-    $('#modelWindow').modal('show');
-  });
-
-  $(document).on('click', '.openSub2', function () {
-    $('#modelWindow2').modal('show');
-  });
-
-  function setModalMaxHeight(element) {
-    this.$element     = $(element);
-    this.$content     = this.$element.find('.modal-content');
-    var borderWidth   = this.$content.outerHeight() - this.$content.innerHeight();
-    var dialogMargin  = $(window).width() < 768 ? 20 : 60;
-    var contentHeight = $(window).height() - (dialogMargin + borderWidth);
-    var headerHeight  = this.$element.find('.modal-header').outerHeight() || 0;
-    var footerHeight  = this.$element.find('.modal-footer').outerHeight() || 0;
-    var maxHeight     = contentHeight - (headerHeight + footerHeight);
-
-    this.$content.css({
-      'overflow': 'hidden'
-    });
-
-    this.$element
-    .find('.modal-body').css({
-      'max-height': maxHeight,
-      'overflow-y': 'auto'
-    });
-  }
-
-  $('.modal').on('show.bs.modal', function() {
-    $(this).show();
-    setModalMaxHeight(this);
-  });
-
-  $(window).resize(function() {
-    if ($('.modal.in').length != 0) {
-      setModalMaxHeight($('.modal.in'));
-    }
-  });
-  </script>
 </body>
 </html>
