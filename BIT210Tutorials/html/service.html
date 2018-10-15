@@ -19,12 +19,10 @@
     <div class="container-fluid">
       <!-- Hamburger Component after screen size decreases -->
       <div class="navbar-header">
-        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#dropDown">
-          <span class="icon-bar"></span>
-          <span class="icon-bar"></span>
-          <span class="icon-bar"></span>
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#dropDown" aria-controls="dropDown"
+        aria-expanded="false" aria-label="Toggle navigation"><div class="animated-icon1"><span></span><span></span><span></span></div>
         </button>
-        <a class="navbar-brand" href="#">SeniorHelp</a>
+        <a class="navbar-brand" href="home.html">SeniorHelp</a>
       </div>
       <!-- Navigation Components -->
       <div class="collapse navbar-collapse" id="dropDown">
@@ -36,7 +34,7 @@
         </ul>
         <!-- Login and Sign Up Components -->
         <ul class="nav navbar-nav navbar-right">
-          <li><a href="signup.html"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
+          <li><a href="#"><span class="glyphicon glyphicon-user"></span>Welcome, User</a></li>
           <li><a href="index.html"><span class="glyphicon glyphicon-log-in"></span> Logout</a></li>
         </ul>
       </div>
