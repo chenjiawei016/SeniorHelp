@@ -22,25 +22,25 @@
       </div>
       <div class="main-info">
         <div class="info-top">
-          <form action="/action_page.php">
+          <form action="home.html" method="get">
             <input class="text" type="text" placeholder="Enter Username" name="username" required>
 
-            <input class="text password" type="password" placeholder="Enter Password" name="psw" required>
+            <input class="text password" type="password" placeholder="Enter Password" name="psw" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" title="at least one number, one uppercase and one lowercase and at least 8 character" required>
 
             <input class="text" type="password" placeholder="Repeat Password" name="psw-repeat" required>
 
             <input class="text fullname" type="text" placeholder="Enter Fullname" name="full-name" required>
 
-            <textarea class="special-txt" name="name" rows="4" cols="22" placeholder="Enter your address"></textarea>
+            <textarea class="special-txt" name="name" rows="4" cols="22" placeholder="Enter your address" required></textarea>
 
             <label for="userType">Are you a:
-            <input type="checkbox" name="type" onclick="showMe('display-box')" value="senior">Senior
-            <input type="checkbox" name="type" onclick="showMe('display-box')" value="service">Service Provider
+            <input type="radio" name="userType" value="senior" required>Senior
+            <input type="radio" name="userType" onclick="showMe()" value="service">Service Provider
             </label>
 
-            <div id="display-box" style="display:none">
+            <div id="display-box">
               <label for="serviceType">Select a service code: </label>
-                <select class="service-code" name="serviceCode">
+                <select id="selection" class="service-code" name="serviceCode" required>
                   <option value="default">Please select...</option>
                   <option value="cooking">A4531 - Cooking</option>
                   <option value="cleaning">A4532 - Cleaning</option>
@@ -57,7 +57,7 @@
             </div>
           </form>
 
-          <p>Already have an account? <a href="index.html">Sign in</a>.</p>
+          <p>Already have an account? <a href="index.html">Login now!</a>.</p>
         </div>
       </div>
     </div>
@@ -67,30 +67,14 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <!-- A script to restrict checkbox only able to check one -->
     <script type="text/javascript">
-        $(document).ready(function(){
-          $('input:checkbox').click(function(){
-            $('input:checkbox').not(this).prop('checked', false);
-          });
-        });
-
-        // hide first option in select attribute
-        $('select > option:first').hide();
-    </script>
-
-    <script type="text/javascript">
-      function showMe (div1) {
-        var chboxs = document.getElementsByName("type");
-        var vis = "none";
-        for(var i=0;i<chboxs.length;i++) {
-          if(chboxs[1].checked){
-            vis = "block";
-            break;
-          } else {
-            vis = "none";
-          }
+    $("#display-box").hide();
+      $("input[type='radio']").change(function(){
+        if($(this).val() == "service"){
+          $("#display-box").show();
+        } else {
+          $("#display-box").hide();
         }
-        document.getElementById(div1).style.display = vis;
-      }
-      </script>
+      });
+    </script>
   </body>
 </html>

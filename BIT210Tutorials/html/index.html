@@ -87,7 +87,7 @@
       margin: 12px 0;
     }
 
-    input[type="button"]:hover {
+    input[type="submit"]:hover, input[type="button"]:hover {
       background: black;
     }
 
@@ -95,20 +95,22 @@
     <title>Login Form</title>
   </head>
   <body id="login">
-    <div class="login-box">
-      <h1>Login</h1>
-      <div class="textbox">
-        <i class="fa fa-user" aria-hidden="true"></i>
-        <input type="text" placeholder="Username" name="" value="">
-      </div>
+    <form class="" action="loader.html" method="get">
+      <div class="login-box">
+        <h1>Login</h1>
+        <div class="textbox">
+          <i class="fa fa-user" aria-hidden="true"></i>
+          <input type="text" placeholder="Username" name="" value="" required>
+        </div>
 
-      <div class="textbox">
-        <i class="fa fa-lock" aria-hidden="true"></i>
-        <input type="password" placeholder="Password" name="" value="">
-      </div>
+        <div class="textbox">
+          <i class="fa fa-lock" aria-hidden="true"></i>
+          <input type="password" placeholder="Password" name="" value="" required>
+        </div>
 
-      <input onclick="location.href='signUp.html'" class="btn-signup" type="button" name="button" value="Sign Up">
-      <input onclick="location.href='loader.html'" class="btn-login" type="button" name="button" value="Login">
-    </div>
+        <input onclick="location.href='signUp.html'" class="btn-signup" type="button" name="button" value="Sign Up">
+        <input class="btn-login" type="submit" name="button" value="Login">
+      </div>
+    </form>
   </body>
 </html>
