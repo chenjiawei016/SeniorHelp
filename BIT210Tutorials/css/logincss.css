@@ -76,6 +76,7 @@
   background-repeat: no-repeat;
   background-size: cover;
   background-attachment: fixed;
+  font-size: 16px;
 }
 
 .header-container h1, p{
@@ -109,9 +110,9 @@
 }
 
 input[type="text"], input[type="password"], input[type="number"],
-textarea {
+textarea.special-txt {
   font-size: 0.9em;
-  color: #fff;
+  color: white;
   font-weight: 100;
   width: 94.5%;
   display: block;
@@ -123,7 +124,6 @@ textarea {
   background-position: -800px 0;
   background-size: 100%;
   background-repeat: no-repeat;
-  color: #fff;
   font-family: 'Roboto', sans-serif;
 }
 
